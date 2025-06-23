@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.rouletteapp">
+
+    <!-- Permiso para escribir en almacenamiento externo (necesario para API < 29 para ciertos directorios, y útil para compatibilidad) -->
+    <!-- Para API 29+, Scoped Storage es diferente, pero este permiso aún puede ser útil para compatibilidad o acceso a MediaStore. -->
+    <!-- Para API 30+, si se usa manageExternalStorage, se debe declarar aquí, pero es un permiso sensible. -->
+    <!-- Por ahora, nos enfocamos en WRITE_EXTERNAL_STORAGE para la funcionalidad básica de guardar. -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="28" />
+    <!-- Para leer, si fuera necesario (por ejemplo, para cargar un logo desde almacenamiento) -->
+    <!-- <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="28" /> -->
+
+
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:supportsRtl="true">
+        <!-- Es importante definir un tema, de lo contrario podría haber errores de compilación/runtime -->
+        <!-- Creando un tema básico si no existe -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:theme="@android:style/Theme.Material.Light.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ConfigActivity"
+            android:label="Configurar Ruleta"
+            android:theme="@android:style/Theme.Material.Light.NoActionBar"
+            android:parentActivityName=".MainActivity">
+            <!-- La etiqueta meta-data para parentActivityName es útil para la navegación "Up" -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity
+            android:name=".RouletteActivity"
+            android:label="Ruleta"
+            android:theme="@android:style/Theme.Material.Light.NoActionBar"
+            android:parentActivityName=".ConfigActivity"
+            android:screenOrientation="portrait"> <!-- Opcional: Forzar orientación si el layout no es responsivo -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ConfigActivity" />
+        </activity>
+        <activity
+            android:name=".WinnersActivity"
+            android:label="Lista de Ganadores"
+            android:theme="@android:style/Theme.Material.Light.NoActionBar"
+            android:parentActivityName=".RouletteActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".RouletteActivity" />
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,54 @@
+<resources>
+    <string name="app_name">RouletteApp</string>
+    <string name="crear_ruleta">Crear Ruleta</string>
+    <string name="nombre_de_la_ruleta">Nombre de la Ruleta</string>
+    <string name="compartir_por_whatsapp">Compartir por WhatsApp</string>
+    <string name="ingrese_nombre_ruleta">Por favor, ingrese un nombre para la ruleta.</string>
+
+    <!-- Strings for ConfigActivity -->
+    <string name="nombre_del_participante">Nombre del Participante</string>
+    <string name="agregar">Agregar</string>
+    <string name="barajar">Barajar</string>
+    <string name="eliminar_duplicados">Elim. Duplicados</string>
+    <string name="eliminar_todos">Elim. Todos</string>
+    <string name="crear_ruleta_lista">¡Crear Ruleta!</string>
+    <string name="volver">Volver</string>
+    <string name="repetir_short">Rep.</string>
+    <string name="eliminar_participante">Eliminar participante</string>
+    <string name="participante_agregado">Participante agregado:</string>
+    <string name="participante_eliminado">Participante eliminado:</string>
+    <string name="participantes_barajados">Participantes barajados.</string>
+    <string name="duplicados_eliminados">Participantes duplicados eliminados.</string>
+    <string name="todos_los_participantes_eliminados">Todos los participantes eliminados.</string>
+    <string name="lista_de_participantes_vacia">La lista de participantes está vacía.</string>
+    <string name="ingrese_nombre_participante">Por favor, ingrese un nombre para el participante.</string>
+    <string name="ruleta_sin_participantes">Añada participantes para crear la ruleta.</string>
+
+    <!-- Strings for RouletteActivity -->
+    <string name="indicador_ganador">Indicador del ganador</string>
+    <string name="girar">GIRAR</string>
+    <string name="ver_ganadores">Ver Ganadores</string>
+    <string name="dialog_ganador_titulo">¡Tenemos un Ganador!</string>
+    <string name="dialog_ganador_mensaje">El ganador es: %s</string>
+    <string name="dialog_opcion_eliminar">Eliminar Ganador</string>
+    <string name="dialog_opcion_dejar">Dejar Ganador</string>
+    <string name="dialog_opcion_aceptar">Aceptar</string>
+    <string name="ruleta_girando">La ruleta está girando...</string>
+    <string name="no_hay_suficientes_participantes">No hay suficientes participantes para girar la ruleta (se necesita al menos 1).</string>
+    <string name="ganador_eliminado">Ganador eliminado de la ruleta.</string>
+    <string name="ganador_conservado">Ganador conservado en la ruleta.</string>
+
+    <!-- Strings for WinnersActivity -->
+    <string name="titulo_ganadores">Ganadores de \"%s\"</string>
+    <string name="exportar_pdf">Exportar PDF</string>
+    <string name="exportar_imagen">Exportar Imagen</string>
+    <string name="no_se_han_registrado_ganadores">Aún no se han registrado ganadores.</string>
+    <string name="exportacion_exitosa_pdf">Lista de ganadores exportada a PDF: %s</string>
+    <string name="exportacion_fallida_pdf">Error al exportar a PDF.</string>
+    <string name="exportacion_exitosa_imagen">Lista de ganadores guardada como imagen: %s</string>
+    <string name="exportacion_fallida_imagen">Error al guardar imagen.</string>
+    <string name="permiso_almacenamiento_necesario">Se necesita permiso de almacenamiento para exportar.</string>
+    <string name="lista_ganadores_pdf_titulo">Lista de Ganadores - Ruleta: %s</string>
+    <string name="logo_content_description">Logo de la aplicación</string>
+
+</resources>
