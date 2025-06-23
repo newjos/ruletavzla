@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".WinnersActivity">
+
+    <TextView
+        android:id="@+id/tvTituloGanadores"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        tools:text="Ganadores de 'Nombre Ruleta'" />
+
+    <!-- Usaremos ListView por simplicidad si RecyclerView no está configurado con Gradle.
+         En un proyecto real, RecyclerView sería preferible. -->
+    <ListView
+        android:id="@+id/lvGanadores"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@id/tvTituloGanadores"
+        android:layout_above="@id/llBotonesExportar"
+        android:layout_marginBottom="16dp"
+        tools:listitem="@layout/list_item_winner"/>
+
+    <TextView
+        android:id="@+id/tvNoGanadores"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/no_se_han_registrado_ganadores"
+        android:textSize="18sp"
+        android:visibility="gone"/>
+
+
+    <LinearLayout
+        android:id="@+id/llBotonesExportar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_above="@id/btnVolverWinners"
+        android:layout_marginBottom="10dp">
+
+        <Button
+            android:id="@+id/btnExportarPdf"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/exportar_pdf"
+            android:layout_marginEnd="4dp"/>
+
+        <Button
+            android:id="@+id/btnExportarImagen"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/exportar_imagen"
+            android:layout_marginStart="4dp"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnVolverWinners"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/volver"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>

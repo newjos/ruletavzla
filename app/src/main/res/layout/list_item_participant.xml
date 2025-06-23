@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp">
+
+    <View
+        android:id="@+id/viewColorParticipante"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="8dp"
+        android:background="@android:color/darker_gray"/> <!-- Color por defecto, se cambiará programáticamente -->
+
+    <TextView
+        android:id="@+id/tvNombreParticipanteItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/viewColorParticipante"
+        android:layout_centerVertical="true"
+        android:textSize="16sp"
+        android:text="Nombre del Participante"/>
+
+    <CheckBox
+        android:id="@+id/cbRepetirParticipante"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toStartOf="@id/btnEliminarParticipanteItem"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="8dp"
+        android:text="@string/repetir_short"/>
+
+    <ImageButton
+        android:id="@+id/btnEliminarParticipanteItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:src="@android:drawable/ic_delete"
+        android:contentDescription="@string/eliminar_participante"
+        android:background="?android:attr/selectableItemBackgroundBorderless"/>
+
+</RelativeLayout>

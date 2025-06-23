@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".ConfigActivity">
+
+    <TextView
+        android:id="@+id/tvNombreRuletaConfig"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        tools:text="Nombre de la Ruleta"/>
+
+    <EditText
+        android:id="@+id/etNuevoParticipante"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvNombreRuletaConfig"
+        android:layout_marginTop="16dp"
+        android:hint="@string/nombre_del_participante"
+        android:inputType="textCapWords"
+        android:imeOptions="actionDone"/>
+
+    <Button
+        android:id="@+id/btnAgregarParticipante"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etNuevoParticipante"
+        android:layout_alignParentEnd="true"
+        android:text="@string/agregar"/>
+
+    <Button
+        android:id="@+id/btnBarajarParticipantes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etNuevoParticipante"
+        android:layout_toStartOf="@id/btnAgregarParticipante"
+        android:layout_marginEnd="8dp"
+        android:text="@string/barajar"/>
+
+    <!-- Asumiendo que RecyclerView está disponible. Si no, se usaría ListView.
+         Para un entorno sin Gradle, RecyclerView requiere dependencias adicionales.
+         Por simplicidad, si RecyclerView no funciona, se puede reemplazar con ListView. -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvParticipantes"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@id/btnAgregarParticipante"
+        android:layout_above="@+id/llAccionesLista"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        tools:listitem="@layout/list_item_participant"/>
+
+    <LinearLayout
+        android:id="@+id/llAccionesLista"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_above="@id/btnCrearRuletaConInfo"
+        android:layout_marginBottom="16dp">
+
+        <Button
+            android:id="@+id/btnEliminarDuplicados"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/eliminar_duplicados"
+            android:textSize="12sp"
+            android:layout_marginEnd="4dp"/>
+
+        <Button
+            android:id="@+id/btnEliminarTodos"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/eliminar_todos"
+            android:textSize="12sp"
+            android:layout_marginStart="4dp"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnCrearRuletaConInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="60dp"
+        android:text="@string/crear_ruleta_lista"/>
+
+    <Button
+        android:id="@+id/btnVolverConfig"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/volver"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="8dp"/>
+
+</RelativeLayout>

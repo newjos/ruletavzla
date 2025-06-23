@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RouletteActivity">
+
+    <TextView
+        android:id="@+id/tvNombreRuletaJuego"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        tools:text="Nombre de la Ruleta en Juego" />
+
+    <!-- Indicador del ganador (flecha/puntero) -->
+    <ImageView
+        android:id="@+id/ivIndicador"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/tvNombreRuletaJuego"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:src="@android:drawable/arrow_down_float"
+        android:contentDescription="@string/indicador_ganador" />
+
+    <!-- Vista personalizada para la ruleta -->
+    <com.example.rouletteapp.RouletteView
+        android:id="@+id/rouletteView"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_below="@id/ivIndicador"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp" />
+
+    <Button
+        android:id="@+id/btnGirarRuleta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rouletteView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:paddingStart="30dp"
+        android:paddingEnd="30dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:textSize="18sp"
+        android:text="@string/girar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp">
+
+        <Button
+            android:id="@+id/btnVolverRoulette"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/volver"
+            android:layout_marginEnd="5dp"/>
+
+        <Button
+            android:id="@+id/btnVerGanadores"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/ver_ganadores"
+            android:layout_marginStart="5dp"/>
+    </LinearLayout>
+
+</RelativeLayout>
